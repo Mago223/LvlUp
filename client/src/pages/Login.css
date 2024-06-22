@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Exo 2", sans-serif;
+    font-style: italic;
 }
 
 body{
@@ -9,13 +12,25 @@ body{
 
 
 #logTitle{
-    color:#E83236;
-    font-size: 35px;
+    font-size: 65px;
     font-weight: bold;
+    background-image: linear-gradient(to right, #D00000 30%, #E85D04 50%, #FFBA08 70%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+#forgotLabel{
+    color:#FFBA08;
 }
 
 p{
     color: white;
+    font-weight: 300;
+    line-height: 1px;
+    padding-bottom: 15px;
+   
 }
 
 #logTitle, p{
@@ -23,5 +38,20 @@ p{
 }
 
 #emailLabel, #passwordLabel{
-    color:#E83236;
+    color:#D00000;
+    font-size: 16px;
 }
+
+#button{
+    background-color:#D00000;
+    font-size: 16px;
+}
+
+#button:hover {
+    filter: brightness(125%);
+  }
+
+#forgotLabel:hover {
+    filter: brightness(140%);
+    
+  }
