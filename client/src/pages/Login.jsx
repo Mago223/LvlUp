@@ -1,4 +1,5 @@
-import "./Login.css"
+import "./Login.css";
+import loginPic from "./login-pic.png";
 
 function Login() {
     return (
@@ -52,8 +53,17 @@ function Login() {
                                     Sign in
                                 </button>
                             </div>
-
                     </form>
+                    <p className="mt-10 text-center text-sm text-white-500">
+                        Don't have an account?{' '}
+                         <a href="/register" id="signUpLink" className="font-semibold leading-6 "> {/*link to register page*/}
+                            Sign up now
+                        </a>
+                    </p>
+                </div>
+
+                <div>
+                    <img id="pic" className="rounded-xl shadow-2xl max-w-full" src={loginPic} />
                 </div>
             </body>
                 

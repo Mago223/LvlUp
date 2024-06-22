@@ -8,7 +8,9 @@
 body{
 
     background-image: url('https://static.vecteezy.com/system/resources/previews/002/597/340/original/dark-black-hexagon-pattern-on-red-orange-neon-abstract-background-in-technology-style-modern-futuristic-geometric-shape-web-banner-design-you-can-use-for-cover-template-poster-illustration-vector.jpg');
+   
 }
+
 
 
 #logTitle{
@@ -17,11 +19,12 @@ body{
     background-image: linear-gradient(to right, #D00000 30%, #E85D04 50%, #FFBA08 70%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    
 }
 
 
 
-#forgotLabel{
+#forgotLabel, #signUpLink{
     color:#FFBA08;
 }
 
@@ -38,8 +41,9 @@ p{
 }
 
 #emailLabel, #passwordLabel{
-    color:#D00000;
+    color:#E85D04;
     font-size: 18px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.336);
 }
 
 #button{
@@ -49,8 +53,18 @@ p{
     font-weight: 600;
 }
 
-#button:hover, #forgotLabel:hover{
+#button:hover, #forgotLabel:hover, #signUpLink:hover{
     filter: brightness(125%);
   }
+
+#button:active{
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0);
+}
+
+#pic{
+    height: 550px;
+    width: 400px;
+}
 
 
