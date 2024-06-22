@@ -39,19 +39,18 @@ p{
 
 #emailLabel, #passwordLabel{
     color:#D00000;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #button{
-    background-color:#D00000;
-    font-size: 16px;
+ 
+    background-image: linear-gradient(to right, #D00000 20%, #FFBA08 80%);
+    font-size: 18px;
+    font-weight: 600;
 }
 
-#button:hover {
+#button:hover, #forgotLabel:hover{
     filter: brightness(125%);
   }
 
-#forgotLabel:hover {
-    filter: brightness(140%);
-    
-  }
+
