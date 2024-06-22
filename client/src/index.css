@@ -2,26 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    font-family: 'Times New Roman', Times, serif;
-}
-
-body{
-
-    background-image: url('https://static.vecteezy.com/system/resources/previews/002/597/340/original/dark-black-hexagon-pattern-on-red-orange-neon-abstract-background-in-technology-style-modern-futuristic-geometric-shape-web-banner-design-you-can-use-for-cover-template-poster-illustration-vector.jpg');
-}
-
-
-#logTitle{
-    color:#E83236;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-p{
-    color: white;
-}
-
-#logTitle, p{
-    text-align: center;
-}
