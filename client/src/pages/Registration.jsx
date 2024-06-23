@@ -6,8 +6,8 @@ export default function Registration() {
     <div className="form">
       <form>
         {/** Profile Picture section */}
-        <div className="col-span-full">
-          <div className="mt-2 flex items-center gap-x-3">
+        <div className="mt-10 flex flex-col items-center gap-y-8 sm:flex sm:items-center sm:justify-center">
+          <div className="flex flex-col items-center sm:col-span-4">
             <UserCircleIcon
               className="h-12 w-12 text-gray-300"
               aria-hidden="true"
