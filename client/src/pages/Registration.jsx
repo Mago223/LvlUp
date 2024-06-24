@@ -4,7 +4,12 @@ import "./Registration.css";
 export default function Registration() {
   return (
     <div className="form">
-      <div className="formCard">
+      <div
+        id="formCard"
+        className="bg-[#1F2025] text-[#181028] p-20 space-y-6 shadow-2xl rounded-xl max-w-full"
+      >
+        <h1 id="registerTitle">LvlUp</h1>
+        <p id="registerSubheading">Unlock Your Next Level</p>
         <form>
           {/** Profile Picture section */}
           <div className=" flex flex-col items-center gap-y-8 sm:flex sm:items-center sm:justify-center">

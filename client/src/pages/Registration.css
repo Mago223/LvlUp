@@ -1,9 +1,7 @@
 .form {
-  border: 2px solid black;
   display: flex;
   justify-content: center;
-  margin: auto;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .form label {
@@ -12,9 +10,33 @@
   margin-bottom: 8px;
 }
 
-.formCard {
-  border: 2px solid black;
-  padding: 30px 5vw;
+#formCard {
+  padding: 20px 7vw;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+#registerTitle {
+  font-size: 65px;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+#registerSubheading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form p {
+  color: white;
+  font-weight: 300;
+  line-height: 1px;
+  padding-bottom: 15px;
 }
