@@ -15,7 +15,7 @@ export default function Registration() {
           <div className=" flex flex-col items-center gap-y-8 sm:flex sm:items-center sm:justify-center">
             <div className="flex flex-col items-center sm:col-span-4">
               <UserCircleIcon
-                className="h-12 w-12 text-gray-300"
+                className="h-15 w-15 text-gray-300"
                 aria-hidden="true"
               />
               <button
@@ -74,7 +74,7 @@ export default function Registration() {
                 Username
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md bg-white">
                   <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">
                     LvlUp.com/
                   </span>
