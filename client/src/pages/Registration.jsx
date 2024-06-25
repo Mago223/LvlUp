@@ -20,7 +20,8 @@ export default function Registration() {
               />
               <button
                 type="button"
-                className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                id="pfpButton"
+                className="rounded-md  px-2.5 py-1.5 text-sm font-semibold shadow-sm text-white"
               >
                 Change
               </button>
@@ -95,7 +96,7 @@ export default function Registration() {
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Email address
+                Email
               </label>
               <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                 <input
@@ -167,12 +168,14 @@ export default function Registration() {
           <div className="mt-6 flex items-center justify-center gap-x-6">
             <button
               type="button"
+              id="cancelButton"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Cancel
             </button>
             <button
               type="submit"
+              id="submitButton"
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Save
