@@ -71,14 +71,20 @@ export default function Registration() {
     <div id="loginBody">
       <div
         id="formCard"
-        className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full"
+        className="bg-[#1F2025] text-[#181028] rounded-xl shadow-2xl p-8 max-w-md w-full"
       >
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-2">
+        <h2
+          id="title"
+          className="text-4xl font-bold text-center text-gray-800 mb-2"
+        >
           LvlUp
         </h2>
-        <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
+        <p
+          id="subheading"
+          className="text-xl font-bold text-center text-gray-800 mb-6"
+        >
           Unlock your next level
-        </h3>
+        </p>
         <form id="registrationForm" noValidate="">
           <div className="mb-4">
             <label
@@ -90,7 +96,7 @@ export default function Registration() {
             <input
               type="text"
               id="fullName"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your full name"
               required=""
             />
@@ -108,7 +114,7 @@ export default function Registration() {
             <input
               type="text"
               id="username"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2 border rounded-lg ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your username"
               required=""
             />
@@ -127,7 +133,7 @@ export default function Registration() {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your email"
               required=""
             />
@@ -145,7 +151,7 @@ export default function Registration() {
             <input
               type="password"
               id="password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your password"
               required=""
             />
@@ -163,7 +169,7 @@ export default function Registration() {
             <input
               type="password"
               id="confirm-password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Confirm your password"
               required=""
             />
