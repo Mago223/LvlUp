@@ -1,6 +1,5 @@
-#loginBody {
+#signupBody {
   display: flex; /* establish flex container */
-  flex-direction: column; /* stack flex items vertically */
   justify-content: center; /* center items vertically, in this case */
   height: 100vh;
   width: 100vw;
@@ -59,4 +58,8 @@
 #formCard button:active {
   transform: translate(0, 0.3rem);
   box-shadow: 0 0.1rem rgba(255, 255, 255, 0);
+}
+
+#signupPic {
+  height: 728.5px;
 }

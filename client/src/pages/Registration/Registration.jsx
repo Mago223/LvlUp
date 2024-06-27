@@ -1,5 +1,6 @@
 import "./Registration.css";
 import { useEffect } from "react";
+import signUpPic from "./dumbbells.jpg";
 
 export default function Registration() {
   useEffect(() => {
@@ -68,10 +69,13 @@ export default function Registration() {
     };
   }, []);
   return (
-    <div id="loginBody">
+    <div
+      id="signupBody"
+      className="flex flex-row justify-center items-center min-h-screen"
+    >
       <div
         id="formCard"
-        className="bg-[#1F2025] text-[#181028] rounded-xl shadow-2xl p-8 max-w-md w-full"
+        className="bg-[#1F2025] text-[#181028] rounded-tl-xl rounded-bl-xl shadow-2xl p-8 max-w-md w-full"
       >
         <h2
           id="title"
@@ -193,6 +197,14 @@ export default function Registration() {
             Sign In
           </a>
         </p>
+      </div>
+
+      <div>
+        <img
+          id="signupPic"
+          className="rounded-tr-xl rounded-br-xl shadow-2xl max-w-md w-full"
+          src={signUpPic}
+        ></img>
       </div>
     </div>
   );
