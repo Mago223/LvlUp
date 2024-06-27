@@ -1,4 +1,3 @@
-import "./Deactivate.css";
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
@@ -23,13 +22,13 @@ function Deactivate() {
                     <div className="px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                         <div className="sm:flex sm:items-start">
                             <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg- sm:mx-0 sm:h-10 sm:w-10">
-                                <ExclamationCircleIcon className="h-9 w-9 text-red-600" aria-hidden="true" />
+                                <ExclamationCircleIcon className="h-10 w-9 text-red-600 pt-1" aria-hidden="true" />
                             </div>
                             <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                <DialogTitle className="text-base text-xl font-semibold leading-6 text-[#d00000]">
+                                <DialogTitle className="text-base text-2xl font-semibold leading-6 text-[#d00000] pt-2" >
                                     Deactivate account
                                 </DialogTitle>
-                                <div className="mt-2">
+                                <div className="mt-5">
                                     <p className="text-md text-[#FFFFFF]">
                                         Are you sure you want to deactivate your account? All of your data will be permanently removed.
                                         This action cannot be undone.
