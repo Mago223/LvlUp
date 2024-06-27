@@ -114,7 +114,7 @@ export default function Registration() {
             <input
               type="text"
               id="username"
-              className="w-full px-4 py-2 border rounded-lg ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your username"
               required=""
             />
