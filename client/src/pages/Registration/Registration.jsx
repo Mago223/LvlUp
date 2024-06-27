@@ -189,7 +189,7 @@ export default function Registration() {
         </form>
         <p className="text-center text-gray-600 mt-4">
           Already have an account?{" "}
-          <a href="#" className="text-blue-500 font-semibold">
+          <a href="/login" className="text-blue-500 font-semibold">
             Sign In
           </a>
         </p>
