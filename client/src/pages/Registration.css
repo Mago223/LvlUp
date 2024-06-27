@@ -1,0 +1,63 @@
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.form label {
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#formCard {
+  padding: 20px 7vw;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#registerTitle {
+  font-size: 65px;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+#registerSubheading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form p {
+  color: white;
+  font-weight: 300;
+  line-height: 1px;
+  padding-bottom: 15px;
+}
+
+.form label {
+  color: #e85d04;
+  font-size: 18px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.336);
+}
+
+#pfpButton,
+#submitButton {
+  background-image: linear-gradient(to right, #d00000 20%, #ffba08 80%);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#cancelButton {
+  color: #e85d04;
+}
+
+.form {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/002/597/340/original/dark-black-hexagon-pattern-on-red-orange-neon-abstract-background-in-technology-style-modern-futuristic-geometric-shape-web-banner-design-you-can-use-for-cover-template-poster-illustration-vector.jpg");
+}

@@ -6,11 +6,11 @@ function Login() {
         <div className="login">
             <body className="flex justify-center items-center min-h-screen">
                 <div className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl max-w-full">
-                    <h1 id='logTitle'> LvlUp </h1>
-                    <p>Welcome back! Please enter your login credentials.</p>
+                    <h1 id='logTitle'> LvlUp </h1> {/* logo */}
+                    <p>Welcome back! Please enter your login credentials.</p>       {/* Instructions */}
                     <form className="space-y-6" action="#" method="POST"> 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium leading-6 " id="emailLabel">
+                            <label htmlFor="email" className="block text-sm font-medium leading-6 " id="emailLabel">        {/* Email */}
                                 Email
                             </label>
                             <div className="mt-2">
@@ -24,7 +24,7 @@ function Login() {
                         </div>
                         
                             <div>
-                                <label htmlFor="password" className="block text-sm font-medium leading-6" id="passwordLabel">
+                                <label htmlFor="password" className="block text-sm font-medium leading-6" id="passwordLabel">        {/* Password */}
                                     Password
                                 </label>
                                 <div className="mt-2">
@@ -39,7 +39,7 @@ function Login() {
                             </div>
 
                             <div className="text-sm">
-                                <a href="#" id="forgotLabel">
+                                <a href="#" id="forgotLabel">       {/* Forgot Password Link */}
                                     Forgot password?
                                 </a>
                             </div>
@@ -48,14 +48,14 @@ function Login() {
                                 <button
                                     type="submit"
                                     className="flex w-full justify-center rounded-md  px-3 py-1.5 text-sm leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                                    id="button">
-                                    Sign in
+                                    id="button"> 
+                                    Sign in         {/* Sign in button */}
                                 </button>
                             </div>
                     </form>
                     <p className="mt-10 text-center text-sm text-white-500">
                         Don't have an account?{' '}
-                         <a href="/register" id="signUpLink" className="font-semibold leading-6 "> {/*link to register page*/}
+                         <a href="/register" id="signUpLink" className="font-semibold leading-6 ">       {/*link to register page*/}
                             Sign up now
                         </a>
                     </p>
