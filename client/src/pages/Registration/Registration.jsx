@@ -16,6 +16,13 @@ export default function Registration() {
       let isValid = true;
 
       // Validate username
+      const fullName = document.getElementById("fullName").value;
+      if (!fullName) {
+        document.getElementById("fullNameError").classList.remove("hidden");
+        isValid = false;
+      }
+
+      // Validate username
       const username = document.getElementById("username").value;
       if (!username) {
         document.getElementById("usernameError").classList.remove("hidden");
@@ -87,7 +94,7 @@ export default function Registration() {
               placeholder="Enter your full name"
               required=""
             />
-            <p className="text-red-500 text-sm mt-2 hidden" id="usernameError">
+            <p className="text-red-500 text-sm mt-2 hidden" id="fullNameError">
               Full name is required.
             </p>
           </div>
