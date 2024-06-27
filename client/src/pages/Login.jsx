@@ -62,7 +62,7 @@ function Login() {
                 </div>
 
                 <div>
-                    <img id="pic" className="rounded-xl shadow-2xl max-w-full" src={loginPic} />
+                    <img id="pic" className="rounded-xl shadow-2xl max-w-full" src={loginPic} /> {/**Picture */}
                 </div>
             </body>
                 
