@@ -3,71 +3,6 @@ import { useEffect } from "react";
 import signUpPic from "./dumbbells.jpg";
 
 export default function Registration() {
-  useEffect(() => {
-    const form = document.getElementById("registrationForm");
-
-    const handleFormSubmit = (event) => {
-      event.preventDefault();
-
-      // Clear previous error messages
-      document.querySelectorAll(".text-red-500").forEach((element) => {
-        element.classList.add("hidden");
-      });
-
-      let isValid = true;
-
-      // Validate username
-      const fullName = document.getElementById("fullName").value;
-      if (!fullName) {
-        document.getElementById("fullNameError").classList.remove("hidden");
-        isValid = false;
-      }
-
-      // Validate username
-      const username = document.getElementById("username").value;
-      if (!username) {
-        document.getElementById("usernameError").classList.remove("hidden");
-        isValid = false;
-      }
-
-      // Validate email
-      const email = document.getElementById("email").value;
-      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!email || !emailPattern.test(email)) {
-        document.getElementById("emailError").classList.remove("hidden");
-        isValid = false;
-      }
-
-      // Validate password
-      const password = document.getElementById("password").value;
-      if (!password) {
-        document.getElementById("passwordError").classList.remove("hidden");
-        isValid = false;
-      }
-
-      // Validate confirm password
-      const confirmPassword = document.getElementById("confirm-password").value;
-      if (password !== confirmPassword) {
-        document
-          .getElementById("confirmPasswordError")
-          .classList.remove("hidden");
-        isValid = false;
-      }
-
-      if (isValid) {
-        // Submit the form if all validations pass
-        // You can handle the form submission here, e.g., send data to the server
-        alert("Form submitted successfully!");
-      }
-    };
-
-    form.addEventListener("submit", handleFormSubmit);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      form.removeEventListener("submit", handleFormSubmit);
-    };
-  }, []);
   return (
     <div
       id="signupBody"
@@ -77,17 +12,17 @@ export default function Registration() {
         id="formCard"
         className="bg-[#1F2025] text-[#181028] rounded-tl-xl rounded-bl-xl shadow-2xl p-8 max-w-md w-full"
       >
-        <h2
+        <h1
           id="title"
           className="text-4xl font-bold text-center text-gray-800 mb-2"
         >
           LvlUp
-        </h2>
+        </h1>
         <p
           id="subheading"
           className="text-xl font-bold text-center text-gray-800 mb-6"
         >
-          Unlock your next level
+          Unlock Your Next Level
         </p>
         <form id="registrationForm" noValidate="">
           <div className="mb-4">
@@ -102,9 +37,9 @@ export default function Registration() {
               id="fullName"
               className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your full name"
-              required=""
+              required
             />
-            <p className="text-red-500 text-sm mt-2 hidden" id="fullNameError">
+            <p className="text-red-500 text-xs mt-2 hidden" id="fullNameError">
               Full name is required.
             </p>
           </div>
@@ -120,7 +55,7 @@ export default function Registration() {
               id="username"
               className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your username"
-              required=""
+              required
             />
             <p className="text-red-500 text-sm mt-2 hidden" id="usernameError">
               Username is required.
@@ -139,11 +74,8 @@ export default function Registration() {
               id="email"
               className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your email"
-              required=""
+              required
             />
-            <p className="text-red-500 text-sm mt-2 hidden" id="emailError">
-              Please enter a valid email.
-            </p>
           </div>
           <div className="mb-4">
             <label
@@ -157,11 +89,8 @@ export default function Registration() {
               id="password"
               className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Enter your password"
-              required=""
+              required
             />
-            <p className="text-red-500 text-sm mt-2 hidden" id="passwordError">
-              Password is required.
-            </p>
           </div>
           <div className="mb-4">
             <label
@@ -175,14 +104,8 @@ export default function Registration() {
               id="confirm-password"
               className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
               placeholder="Confirm your password"
-              required=""
+              required
             />
-            <p
-              className="text-red-500 text-sm mt-2 hidden"
-              id="confirmPasswordError"
-            >
-              Passwords do not match.
-            </p>
           </div>
           <button
             type="submit"
