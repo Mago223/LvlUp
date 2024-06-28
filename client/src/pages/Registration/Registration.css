@@ -1,0 +1,65 @@
+#signupBody {
+  display: flex; /* establish flex container */
+  justify-content: center; /* center items vertically, in this case */
+  height: 100vh;
+  width: 100vw;
+  align-items: center; /* center items horizontally, in this case */
+  background-image: url("https://static.vecteezy.com/system/resources/previews/002/597/340/original/dark-black-hexagon-pattern-on-red-orange-neon-abstract-background-in-technology-style-modern-futuristic-geometric-shape-web-banner-design-you-can-use-for-cover-template-poster-illustration-vector.jpg");
+}
+
+#title {
+  font-size: 45px;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 5px;
+}
+
+#subheading {
+  color: white;
+  font-weight: 300;
+  font-size: large;
+  line-height: 1px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+#formCard label {
+  color: #e85d04;
+  font-size: 17px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.336);
+}
+
+#formCard a {
+  color: #ffba08;
+}
+
+#formCard button {
+  background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+  );
+  margin-top: 10px;
+}
+
+#formCard a:hover,
+#formCard button:hover {
+  filter: brightness(125%);
+}
+
+#formCard button:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0);
+}
+
+#signupPic {
+  height: 728.5px;
+}
