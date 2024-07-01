@@ -6,10 +6,10 @@ const db = require("./db");
 app.get('/some-route', async (req, res) => {
   try {
     const result = await db.query('SELECT * FROM your_table');
-    console.log('Query result:', result.rows);
+    //console.log('Query result:', result.rows);
     res.json(result.rows)
   } catch (err) {
-    console.error(err);
+    console.error('Error executing database query:', err);
     res.status(500).json({
       error: 'Database query failed'
     });
