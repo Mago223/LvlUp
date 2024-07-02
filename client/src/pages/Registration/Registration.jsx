@@ -1,5 +1,4 @@
 import "./Registration.css";
-import { useEffect } from "react";
 import signUpPic from "./dumbbells.jpg";
 
 export default function Registration() {
