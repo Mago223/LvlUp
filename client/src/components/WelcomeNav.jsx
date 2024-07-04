@@ -1,6 +1,5 @@
 import "./WelcomeNav.css";
 
- 
 function WelcomeNav() {
    
     return (
