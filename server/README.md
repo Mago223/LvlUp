@@ -1,6 +1,6 @@
-# PostgreSQL Database Setup
+# PostgreSQL Database Setip
 
-This README provides instructions on how to set up and run SQL queries to create tables in PostgreSQL using Visual Studio Code.
+This README provides instructions on how to set up and run SQL queries to create tables and insert a user in PostgreSQL using Visual Studio Code.
 
 ## Prerequisites
 
