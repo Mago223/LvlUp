@@ -16,10 +16,22 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 
+import "../styles/MainNavbar.css";
+
 const navigation = [
-  { name: "Home", icon: HomeIcon, href: "#", current: true },
-  { name: "Leaderboard", icon: ChartBarIcon, href: "#", current: false },
-  { name: "Notifications", icon: BellIcon, href: "#", current: false },
+  { name: "Home", icon: HomeIcon, href: "/home", current: true },
+  {
+    name: "Leaderboard",
+    icon: ChartBarIcon,
+    href: "/leaderboard",
+    current: false,
+  },
+  {
+    name: "Notifications",
+    icon: BellIcon,
+    href: "/notifications",
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
@@ -28,7 +40,7 @@ function classNames(...classes) {
 
 export default function MainNavbar() {
   return (
-    <Disclosure as="nav" className="bg-dark-grey">
+    <Disclosure as="nav" className="bg-dark-grey shadow-md">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button - only visible on small screens */}
@@ -52,7 +64,9 @@ export default function MainNavbar() {
           {/* Logo section - centered on mobile, left-aligned on larger screens */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <h1 className="h-8 w-auto text-white text-xl font-bold">LvlUp</h1>
+              <h1 className="h-8 w-auto text-xl font-bold" id="logo">
+                LvlUp
+              </h1>
             </div>
           </div>
 
@@ -66,14 +80,22 @@ export default function MainNavbar() {
                     key={item.name}
                     href={item.href}
                     aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
-                    )}
+                    className="rounded-md px-3 py-2 text-sm font-medium"
+                    style={{ color: item.current ? "#ffba08" : "#e85d04" }} // Deep orange colors
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "#ffba08")
+                    } // Brighter on hover
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = item.current
+                        ? "#ffba08"
+                        : "#e85d04")
+                    }
                   >
-                    <item.icon className="h-8 w-8" aria-hidden="true" />
+                    <item.icon
+                      className="h-8 w-8"
+                      aria-hidden="true"
+                      style={{ color: "inherit" }} // This will make the icon inherit the color from its parent
+                    />
                   </a>
                 ))}
               </div>
@@ -82,10 +104,22 @@ export default function MainNavbar() {
             {/* Profile dropdown menu */}
             <Menu as="div" className="relative ml-3">
               <div>
-                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-1.5" />
+                <MenuButton
+                  className="relative flex rounded-md p-2 text-sm"
+                  style={{ color: "#e85d04" }} // Default color
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "#ffba08")
+                  } // Brighter on hover
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "#e85d04")
+                  } // Back to default on leave
+                >
                   <span className="sr-only">Open user menu</span>
-                  <UserCircleIcon className="h-8 w-8 " aria-hidden="true" />
+                  <UserCircleIcon
+                    className="h-8 w-8"
+                    aria-hidden="true"
+                    style={{ color: "inherit" }} // Inherit color from parent
+                  />
                 </MenuButton>
               </div>
               {/* Dropdown menu items */}
