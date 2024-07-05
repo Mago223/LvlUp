@@ -40,7 +40,7 @@ function classNames(...classes) {
 
 export default function MainNavbar() {
   return (
-    <Disclosure as="nav" className="bg-dark-grey shadow-md">
+    <Disclosure as="nav" className="bg-dark-grey shadow-md" id="nav">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button - only visible on small screens */}
@@ -125,24 +125,17 @@ export default function MainNavbar() {
               {/* Dropdown menu items */}
               <MenuItems
                 transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-input-grey py-1 shadow-md transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
               >
                 <MenuItem>
                   <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
+                    href="/profile"
+                    className="block px-4 py-2 text-sm text-blue-600 data-[focus]:bg-orange-200"
                   >
                     Your Profile
                   </a>
                 </MenuItem>
-                <MenuItem>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
-                  >
-                    Settings
-                  </a>
-                </MenuItem>
+
                 <MenuItem>
                   <a
                     href="#"

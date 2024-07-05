@@ -10,3 +10,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+#nav a {
+  color: #969595;
+}
