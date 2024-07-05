@@ -13,7 +13,7 @@ function WelcomeNav() {
                 <a href="#" className='text-[#DC2F02] p-3 t m-2 cursor-pointer duration-300 text-lg'> Meal Plans </a>
                 <a href="#" className='text-[#E85D04] p-3 t m-2 cursor-pointer duration-300 text-lg'> Workouts </a>
                 <a href="#" className='text-[#F48C06] p-3 t m-2 cursor-pointer duration-300 text-lg'> About Us </a>
-                <a href="#" className='text-[#ffba08] p-3 t m-2 cursor-pointer duration-300 text-lg'> Log In </a>
+                <a href="/login" className='text-[#ffba08] p-3 t m-2 cursor-pointer duration-300 text-lg'> Log In </a>
             </div>
 
             
