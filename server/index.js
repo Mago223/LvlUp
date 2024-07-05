@@ -1,4 +1,6 @@
 const express = require("express");
+const sequelize = require("sequelize");
+const cookieParser = require("cookie-parser");
 const app = express();
 const db = require("./db");
 
