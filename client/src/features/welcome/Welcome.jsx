@@ -1,6 +1,6 @@
-import "../styles/Welcome.css";
-import WelcomeNav from "../components/WelcomeNav";
-import welcomePic from "../assets/welcome-page-pic.jpg";
+import "./Welcome.css";
+import WelcomeNav from "./WelcomeNav";
+import welcomePic from "./welcome-page-pic.jpg";
 
 function Welcome() {
     return (
