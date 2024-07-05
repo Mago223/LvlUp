@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login, Registration, Welcome } from "./features/auth/index";
+import { Login, Registration, Welcome} from "./features/auth/index";
+
 
 function App() {
   return (
