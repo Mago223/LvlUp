@@ -4,6 +4,7 @@ export default {
   theme: {
     colors: {
       "dark-grey": "#1F2025",
+      "input-grey": "#2E2E2E",
     },
     extend: {},
   },
