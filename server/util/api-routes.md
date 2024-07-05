@@ -12,7 +12,3 @@
 | GET     | /api/test/user   | access User’s content      |
 | GET     | /api/test/mod    | access Moderator’s content |
 | GET     | /api/test/admin  | access Admin’s content     |
-
-# Resources:
-
-[Node.js JWT Authentication with PostgreSQL example](https://www.bezkoder.com/node-js-jwt-authentication-postgresql/#Token_Based_Authentication)
