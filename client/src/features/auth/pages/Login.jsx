@@ -1,5 +1,5 @@
-import "./Login.css";
-import loginPic from "./login-pic.png";
+import "../styles/Login.css";
+import loginPic from "../assets/login-pic.png";
 
 function Login() {
   return (

@@ -1,0 +1,25 @@
+.welcome body{
+    background-color: black;
+}
+
+#headline{
+    text-align: center;
+    background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+ 
+    
+}
+
+#subtitle{
+    text-align: center;
+    padding-top: 250px;
+
+    font-size: 20px;
+    color:#e85d04;
+}

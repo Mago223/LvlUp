@@ -1,4 +1,4 @@
-import "./WelcomeNav.css";
+import "../styles/WelcomeNav.css";
 
 function WelcomeNav() {
    
