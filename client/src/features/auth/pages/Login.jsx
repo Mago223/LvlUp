@@ -89,7 +89,7 @@ function Login() {
         <div>
           <img
             id="pic"
-            className="rounded-xl shadow-2xl max-w-full"
+            className="rounded-xl rounded-l-none shadow-2xl max-w-full"
             src={loginPic}
           />{" "}
           {/**Picture */}
