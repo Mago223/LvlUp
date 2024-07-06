@@ -19,10 +19,17 @@ import {
 import "../styles/MainNavbar.css";
 
 const navigation = [
-  { name: "Home", icon: HomeIcon, href: "/home", current: true },
+  {
+    name: "Home",
+    icon: HomeIcon,
+    href: "/home",
+    color: "#DC2F02",
+    current: true,
+  },
   {
     name: "Leaderboard",
     icon: ChartBarIcon,
+    color: "#E85D04",
     href: "/leaderboard",
     current: false,
   },
@@ -30,12 +37,32 @@ const navigation = [
     name: "Notifications",
     icon: BellIcon,
     href: "/notifications",
+    color: "#F48C06",
     current: false,
   },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
+}
+
+function lightenColor(color, percent) {
+  const num = parseInt(color.replace("#", ""), 16),
+    amt = Math.round(2.55 * percent),
+    R = (num >> 16) + amt,
+    G = ((num >> 8) & 0x00ff) + amt,
+    B = (num & 0x0000ff) + amt;
+  return (
+    "#" +
+    (
+      0x1000000 +
+      (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+      (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+      (B < 255 ? (B < 1 ? 0 : B) : 255)
+    )
+      .toString(16)
+      .slice(1)
+  );
 }
 
 export default function MainNavbar() {
@@ -81,15 +108,16 @@ export default function MainNavbar() {
                     href={item.href}
                     aria-current={item.current ? "page" : undefined}
                     className="rounded-md px-3 py-2 text-sm font-medium"
-                    style={{ color: item.current ? "#ffba08" : "#e85d04" }} // Deep orange colors
+                    style={{ color: item.color }} // Use the color from the navigation item
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#ffba08")
-                    } // Brighter on hover
+                      (e.currentTarget.style.color = lightenColor(
+                        item.color,
+                        20
+                      ))
+                    } // Lighten color on hover
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = item.current
-                        ? "#ffba08"
-                        : "#e85d04")
-                    }
+                      (e.currentTarget.style.color = item.color)
+                    } // Return to original color
                   >
                     <item.icon
                       className="h-8 w-8"
@@ -103,15 +131,15 @@ export default function MainNavbar() {
 
             {/* Profile dropdown menu */}
             <Menu as="div" className="relative ml-3">
-              <div>
+              <div id="userCircle">
                 <MenuButton
                   className="relative flex rounded-md p-2 text-sm"
-                  style={{ color: "#e85d04" }} // Default color
+                  style={{ color: "#ffba08" }} // Set the default color
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "#ffba08")
-                  } // Brighter on hover
+                    (e.currentTarget.style.color = lightenColor("#ffba08", 20))
+                  } // Lighten on hover
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "#e85d04")
+                    (e.currentTarget.style.color = "#ffba08")
                   } // Back to default on leave
                 >
                   <span className="sr-only">Open user menu</span>
@@ -159,14 +187,14 @@ export default function MainNavbar() {
               as="a"
               href={item.href}
               aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                item.current
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                "block rounded-md px-3 py-2 text-base font-medium"
-              )}
+              className="block rounded-md px-3 py-2 text-base font-medium w-full text-center"
+              style={{ color: item.color }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = lightenColor(item.color, 20))
+              }
+              onMouseLeave={(e) => (e.currentTarget.style.color = item.color)}
             >
-              <item.icon className="h-8 w-8" aria-hidden="true" />
+              <item.icon className="h-8 w-8 mx-auto mb-1" aria-hidden="true" />
             </DisclosureButton>
           ))}
         </div>
