@@ -19,7 +19,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 //connecting to model
-db.users = require("./features/auth/model/userModel")(sequelize, DataTypes);
+db.users = require("../model/userModel")(sequelize, DataTypes);
 
 //exporting the module
 module.exports = db;

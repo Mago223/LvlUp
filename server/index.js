@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const db = require("./db.config");
-const userRoutes = require("./features/auth/routes/userRoutes");
+const db = require("./config/db.config");
+const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 // require cors allowing the frontend to make calls to the backend
