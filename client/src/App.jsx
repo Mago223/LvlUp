@@ -8,7 +8,7 @@ function App() {
         <Routes>
           <Route path="/register" element={<Registration />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Welcome />} /> {/**Home page */}
+          <Route path="/" element={<Welcome />} /> {/**welcome page */}
         </Routes>
       </BrowserRouter>
     </div>
