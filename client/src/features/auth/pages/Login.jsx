@@ -5,7 +5,10 @@ function Login() {
   return (
     <div className="login">
       <body className="flex justify-center items-center min-h-screen">
-        <div className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl rounded-r-none max-w-full">
+        <div
+          className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl rounded-r-none max-w-full"
+          id="loginBody"
+        >
           <h1 id="logTitle"> LvlUp </h1> {/* logo */}
           <p>Welcome back! Please enter your login credentials.</p>{" "}
           {/* Instructions */}
@@ -89,7 +92,7 @@ function Login() {
         <div>
           <img
             id="pic"
-            className="rounded-xl rounded-l-none shadow-2xl max-w-full"
+            className="rounded-xl rounded-l-none shadow-2xl max-w-full hidden md:block"
             src={loginPic}
           />{" "}
           {/**Picture */}
