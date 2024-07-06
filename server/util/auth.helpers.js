@@ -34,7 +34,7 @@ It makes sure the bracelet only works for this park, not any other parks (sameSi
  * @returns {string} The generated JWT token
  */
 const generateToken = (userId) => {
-	return jwt.sign({ id: userId }, process.env.SECRET_KEY, {
+	return jwt.sign({ id: userId }, process.env.JWT_SECRET_KEY, {
 		expiresIn: "24h",
 	});
 };
