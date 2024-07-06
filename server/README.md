@@ -61,3 +61,7 @@ Create two SQL files in database/ (should be already there):
 
 -   [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 -   [VS Code PostgreSQL Extension Documentation](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-postgresql)
+
+# Resourses:
+
+[Node.js JWT Authentication with PostgreSQL example](https://www.bezkoder.com/node-js-jwt-authentication-postgresql/#Token_Based_Authentication)
