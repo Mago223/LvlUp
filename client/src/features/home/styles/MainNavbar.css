@@ -1,0 +1,16 @@
+#logo {
+  font-size: 40px;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#nav a {
+  color: #969595;
+}
