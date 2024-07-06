@@ -1,4 +1,4 @@
-const db = require("../../../model");
+const db = require("../config/db.config");
 const User = db.users;
 
 const saveUser = async (req, res, next) => {

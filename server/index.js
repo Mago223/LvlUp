@@ -1,4 +1,6 @@
 const express = require("express");
+const sequelize = require("sequelize");
+const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const db = require("./config/db.config");
 const userRoutes = require("./routes/userRoutes");
