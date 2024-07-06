@@ -166,7 +166,8 @@ export default function MainNavbar() {
 
                 <MenuItem>
                   <a
-                    href="#"
+                  {/* change this later on to the logout component */}
+                    href="/login" 
                     className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
                   >
                     Sign out
