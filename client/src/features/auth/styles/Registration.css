@@ -4,7 +4,7 @@
   height: 100vh;
   width: 100vw;
   align-items: center; /* center items horizontally, in this case */
-  background-image: url("https://static.vecteezy.com/system/resources/previews/002/597/340/original/dark-black-hexagon-pattern-on-red-orange-neon-abstract-background-in-technology-style-modern-futuristic-geometric-shape-web-banner-design-you-can-use-for-cover-template-poster-illustration-vector.jpg");
+  background-color: #1c1b1b;
 }
 
 #title {
@@ -61,5 +61,6 @@
 }
 
 #signupPic {
-  height: 728.5px;
+  height: 92.42vh;
+  width: 29vw;
 }
