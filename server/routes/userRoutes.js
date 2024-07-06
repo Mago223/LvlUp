@@ -10,7 +10,7 @@ const express = require("express");
 const userController = require("../controllers/userController");
 const { signup, login, deleteUserAccount } = userController; // Destructure specific functions from the controller
 const userAuth = require("../middleware/userAuth");
-const tokenAuth = require("../middleware/authMiddleware");
+const auth = require("../middleware/authMiddleware");
 const { body } = require("express-validator");
 const router = express.Router();
 /**
@@ -48,7 +48,7 @@ router.post(
  *
  * This route handles user deletion. It directly calls the deleteUserAccount controller function.
  */
-router.post("/delete", tokenAuth, deleteUserAccount);
+router.post("/delete", auth.authenticateToken, deleteUserAccount);
 
 module.exports = router;
 
