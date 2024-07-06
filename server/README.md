@@ -46,6 +46,6 @@ If you already have a psql file to run, follow step 5.
 
 # Resourses:
 
-### Authentication
+[Getting Started with the PostgreSQL Extension for VSCode](https://ryanhutzley.medium.com/getting-started-with-the-postgresql-extension-for-vscode-d666c281ec72)
 
-[Node.js JWT Authentication with PostgreSQL example](https://www.bezkoder.com/node-js-jwt-authentication-postgresql/#Token_Based_Authentication)
+[Node.js Authentication with PostgreSQL, Sequelize, and Express.js](https://medium.com/@rachealkuranchie/node-js-authentication-with-postgresql-sequelize-and-express-js-20ae773da4c9)
