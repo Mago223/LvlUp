@@ -68,7 +68,7 @@ function lightenColor(color, percent) {
 export default function MainNavbar() {
   return (
     <Disclosure as="nav" className="bg-dark-grey shadow-md" id="nav">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button - only visible on small screens */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -91,7 +91,7 @@ export default function MainNavbar() {
           {/* Logo section - centered on mobile, left-aligned on larger screens */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <h1 className="h-8 w-auto text-xl font-bold" id="logo">
+              <h1 className="h-10 w-auto text-xl font-bold" id="logo">
                 LvlUp
               </h1>
             </div>
