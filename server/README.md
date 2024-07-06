@@ -1,4 +1,17 @@
-# PostgreSQL Database Setip
+# Before running
+
+Make sure to provide environment variables
+
+Example:
+
+-   DB_HOST=localhost
+-   DB_USER=<username>
+-   DB_PASSWORD=<password>
+-   DB_NAME=<database name>
+-   DB_PORT=<port your server runs on>
+-   JWT_SECRET_KEY = ydwygyegyegcveyvcyegc
+
+# PostgreSQL Database VSCODE Integration Setup
 
 This README provides instructions on how to set up and run SQL queries to create tables and insert a user in PostgreSQL using Visual Studio Code.
 
@@ -14,19 +27,12 @@ This README provides instructions on how to set up and run SQL queries to create
 
 Ensure PostgreSQL is installed on your system. You can download it from the [official PostgreSQL website](https://www.postgresql.org/download/).
 
-### 2. Create SQL Files
-
-Create two SQL files in database/ (should be already there):
-
--   `create_tables.sql`: For creating the database tables
--   `insert_data.sql`: For inserting initial data (optional)
-
 ### 3. Install VS Code PostgreSQL Extension
 
 1. Open VS Code
 2. Go to the Extensions view by clicking on the square icon in the left sidebar or pressing `Ctrl+Shift+X`
-3. Search for "PostgreSQL"
-4. Install the extension by Microsoft
+3. Search for "PostgreSQL" The first one by Chris... is the one, not the Microsoft provided one
+4. Install the extension
 
 ### 4. Set Up Database Connection in VS Code
 
@@ -41,27 +47,18 @@ Create two SQL files in database/ (should be already there):
 
 ## Running SQL Queries
 
-### To Create Tables:
+If you need to run an sql query to alter your database:
 
-1. Open your `create_tables.sql` file in VS Code
-2. Ensure your database connection is selected in the PostgreSQL extension sidebar
-3. Right-click in the SQL file and select "Run Query" or use the shortcut `Ctrl+Shift+E`
-4. Highlight the Queries in the file, right click and click run query
+1. the extenstion should be on the vscoode sidebar (postgre symbol)
+2. you will see a tab named 'localhost', expand that
+3. you will see your database, right click and select 'Run Query'
+4. this will open up a new file in which you can paste or type in a new query
+5. after the query is present, highlight it, right click and select 'Run Query'
 
-### To Insert Initial Data:
-
-1. Open your `insert_data.sql` file in VS Code
-2. Follow the same steps as above to run the query
-
-## Troubleshooting
-
--   [Setting up the extenstion](https://ryanhutzley.medium.com/getting-started-with-the-postgresql-extension-for-vscode-d666c281ec72)
-
-## Additional Resources
-
--   [PostgreSQL Documentation](https://www.postgresql.org/docs/)
--   [VS Code PostgreSQL Extension Documentation](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-postgresql)
+If you already have a psql file to run, follow step 5.
 
 # Resourses:
 
-[Node.js JWT Authentication with PostgreSQL example](https://www.bezkoder.com/node-js-jwt-authentication-postgresql/#Token_Based_Authentication)
+[Getting Started with the PostgreSQL Extension for VSCode](https://ryanhutzley.medium.com/getting-started-with-the-postgresql-extension-for-vscode-d666c281ec72)
+
+[Node.js Authentication with PostgreSQL, Sequelize, and Express.js](https://medium.com/@rachealkuranchie/node-js-authentication-with-postgresql-sequelize-and-express-js-20ae773da4c9)

@@ -1,0 +1,2 @@
+--delete all user data in the table
+DELETE FROM users;
