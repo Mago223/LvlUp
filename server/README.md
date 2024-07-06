@@ -1,3 +1,16 @@
+# Before running
+
+Make sure to provide environment variables
+
+Example:
+
+-   DB_HOST=localhost
+-   DB_USER=<username>
+-   DB_PASSWORD=<password>
+-   DB_NAME=<database name>
+-   DB_PORT=<port your server runs on>
+-   JWT_SECRET_KEY = ydwygyegyegcveyvcyegc
+
 # PostgreSQL Database VSCODE Integration Setup
 
 This README provides instructions on how to set up and run SQL queries to create tables and insert a user in PostgreSQL using Visual Studio Code.
