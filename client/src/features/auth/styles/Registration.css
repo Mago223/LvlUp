@@ -64,3 +64,11 @@
   height: 92.42vh;
   width: 29vw;
 }
+
+#formCard input {
+  box-shadow: inset 0 0 0 1px #fca5a5;
+}
+
+#formCard input:focus {
+  box-shadow: inset 0 0 0 2px #dc2626;
+}

@@ -10,18 +10,12 @@ export default function Registration() {
     >
       <div
         id="formCard"
-        className="bg-[#1F2025] text-[#181028] rounded-tl-xl rounded-bl-xl shadow-2xl p-8 max-w-md w-full"
+        className="bg-[#1F2025] rounded-tl-xl rounded-bl-xl shadow-2xl p-8 max-w-md w-full"
       >
-        <h1
-          id="title"
-          className="text-4xl font-bold text-center text-gray-800 mb-2"
-        >
+        <h1 id="title" className="text-4xl font-bold text-center  mb-2">
           LvlUp
         </h1>
-        <p
-          id="subheading"
-          className="text-xl font-bold text-center text-gray-800 mb-6"
-        >
+        <p id="subheading" className="text-xl font-bold text-center mb-6">
           Unlock Your Next Level
         </p>
         <form id="registrationForm" noValidate="">
@@ -35,13 +29,10 @@ export default function Registration() {
             <input
               type="text"
               id="fullName"
-              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm"
               placeholder="Enter your full name"
               required
             />
-            <p className="text-red-500 text-xs mt-2 hidden" id="fullNameError">
-              Full name is required.
-            </p>
           </div>
           <div className="mb-4">
             <label
@@ -53,13 +44,10 @@ export default function Registration() {
             <input
               type="text"
               id="username"
-              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm"
               placeholder="Enter your username"
               required
             />
-            <p className="text-red-500 text-sm mt-2 hidden" id="usernameError">
-              Username is required.
-            </p>
           </div>
 
           <div className="mb-4">
@@ -72,7 +60,7 @@ export default function Registration() {
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm"
               placeholder="Enter your email"
               required
             />
@@ -87,7 +75,7 @@ export default function Registration() {
             <input
               type="password"
               id="password"
-              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm"
               placeholder="Enter your password"
               required
             />
@@ -102,7 +90,7 @@ export default function Registration() {
             <input
               type="password"
               id="confirm-password"
-              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm ring-1 ring-inset ring-red-300 focus:ring-2 focus:ring-inset focus:ring-red-600"
+              className="w-full px-4 py-2.5 border-0 rounded-lg shadow-sm"
               placeholder="Confirm your password"
               required
             />
@@ -114,9 +102,9 @@ export default function Registration() {
             Register
           </button>
         </form>
-        <p className="text-center text-gray-600 mt-4">
+        <p className="text-center mt-4 text-gray-700">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-500 font-semibold">
+          <a href="/login" className="font-semibold">
             Sign In
           </a>
         </p>
@@ -125,7 +113,7 @@ export default function Registration() {
       <div>
         <img
           id="signupPic"
-          className="rounded-tr-xl rounded-br-xl shadow-2xl max-w-md w-full  hidden md:block"
+          className="rounded-tr-xl rounded-br-xl shadow-2xl max-w-md w-full hidden md:block"
           src={signUpPic}
         ></img>
       </div>
