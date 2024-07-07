@@ -12,8 +12,18 @@ const cookieParser = require("cookie-parser");
 const db = require("./config/db.config"); // Database configuration
 const userRoutes = require("./routes/userRoutes"); // User-related routes
 const app = express();
+const cors = require("cors");
+
+// CORS Configuration
+const corsOptions = {
+	origin: process.env.CLIENT_URL || "http://localhost:5173", // Allow your frontend URL
+	credentials: true, // Allow cookies to be sent
+	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+	allowedHeaders: ["Content-Type", "Authorization"],
+};
 
 // Middleware setup
+app.use(cors(corsOptions));
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
 app.use(cookieParser()); // Parse Cookie header and populate req.cookies
