@@ -14,9 +14,9 @@ function Login() {
 		setUser((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleLogin = (e) => {
+	const handleLogin = async (e) => {
 		e.preventDefault();
-		const response = login(user);
+		const response = await login(user);
 		console.log(response);
 	};
 
