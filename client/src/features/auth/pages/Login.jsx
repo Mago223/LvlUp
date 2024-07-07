@@ -6,7 +6,7 @@ function Login() {
     <div className="login">
       <body className="flex justify-center items-center min-h-screen">
         <div
-          className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl rounded-r-none max-w-full"
+          className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl lg:rounded-r-none rounded-r-xl max-w-full"
           id="loginBody"
         >
           <h1 id="logTitle"> LvlUp </h1> {/* logo */}
@@ -92,7 +92,7 @@ function Login() {
         <div>
           <img
             id="pic"
-            className="rounded-xl rounded-l-none shadow-2xl max-w-full hidden md:block"
+            className="rounded-xl rounded-l-none shadow-2xl max-w-full hidden lg:block"
             src={loginPic}
           />{" "}
           {/**Picture */}
