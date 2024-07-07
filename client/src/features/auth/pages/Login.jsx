@@ -25,7 +25,7 @@ function Login() {
       {/* FROM MICHAEL: FIX THIS, cant have body within a div. never put body in a component, leave to index.html */}
       <body className="flex justify-center items-center min-h-screen">
         <div
-          className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl lg:rounded-r-none rounded-r-xl max-w-full"
+          className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl lg:rounded-r-none max-w-full"
           id="loginBody"
         >
           <h1 id="logTitle"> LvlUp </h1> {/* logo */}
