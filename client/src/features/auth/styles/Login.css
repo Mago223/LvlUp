@@ -67,3 +67,11 @@
   height: 70.379vh;
   width: 27vw;
 }
+
+.login input {
+  box-shadow: inset 0 0 0 1px #fca5a5;
+}
+
+.login input:focus {
+  box-shadow: inset 0 0 0 2px #dc2626;
+}
