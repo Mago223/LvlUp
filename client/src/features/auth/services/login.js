@@ -6,7 +6,7 @@ export const login = async (userObject) => {
 	if (typeof userObject === "object" && userObject !== null) {
 		try {
 			const response = await axios.post(`${DB_HOST}${loginEndPoint}`, userObject);
-			return response.data;
+			return response;
 		} catch (error) {
 			console.error("Login error:", error.response?.data || error.message);
 			throw error;
