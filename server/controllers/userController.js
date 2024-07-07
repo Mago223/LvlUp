@@ -104,9 +104,29 @@ const login = async (req, res) => {
 		res.status(500).json({ error: "An error occurred during login", message: error });
 	}
 };
+
+const deleteUserAccount = async (req, res) => {
+	try {
+		const userId = req.user.id; // comes from the user authorization
+		const deletedUser = await User.destroy({
+			where: { id: userId },
+		});
+		if (deletedUser) {
+			res.clearCookie("jwt");
+			return res.status(200).json({ message: "Account successfully deleted" });
+		} else {
+			return res.status(404).json({ error: "User not found" });
+		}
+	} catch (error) {
+		console.error("'Delete' account error:", error);
+		res.status(500).json({ error: "An error occurred while deleting the account" });
+	}
+};
+
 module.exports = {
 	signup,
 	login,
+	deleteUserAccount,
 };
 
 /**
