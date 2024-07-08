@@ -1,4 +1,4 @@
-import "./WelcomeNav.css";
+import "../styles/WelcomeNav.css";
 
 function WelcomeNav() {
    
@@ -7,7 +7,7 @@ function WelcomeNav() {
            
            {/* Logo */}
             <h1 id="logo">LvlUp</h1>
-            
+
             {/* Desktop Navigation */}
             <div className='sm:flex pt-1' >
                 <a href="#" className='text-[#DC2F02] p-3 t m-2 cursor-pointer duration-300 text-lg'> Meal Plans </a>
@@ -16,8 +16,6 @@ function WelcomeNav() {
                 <a href="/login" className='text-[#ffba08] p-3 t m-2 cursor-pointer duration-300 text-lg'> Log In </a>
             </div>
 
-            
-            
         </nav>
     );
 };

@@ -1,14 +1,13 @@
-import "./Welcome.css";
-import WelcomeNav from "./WelcomeNav";
-import welcomePic from "./welcome-page-pic.jpg";
+import "../styles/Welcome.css";
+import WelcomeNav from "../components/WelcomeNav";
+import welcomePic from "../welcome-page-pic.jpg";
 
 function Welcome() {
     return (
         <div className="welcome">
             {/**Navbar */}
             <WelcomeNav />
-
-            <body className="min-h-screen">
+            <div id="back" className="min-h-screen bg-black">
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-col" id="textCont">
                         <div className="flex flex-row justify-start">
@@ -32,8 +31,7 @@ function Welcome() {
                     <img id="welcomePic"  src={welcomePic}  />
                     
                 </div>
-            </body>
-           
+            </div>  
         </div>
     );
 }
