@@ -1,4 +1,4 @@
-import "../styles/registration.css";
+import "../styles/Registration.css";
 import { useState } from "react";
 import signUpPic from "../assets/dumbbells.jpg";
 import { signup } from "../services/signup";
