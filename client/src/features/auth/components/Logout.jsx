@@ -1,5 +1,5 @@
 
-import "..styles/Logout.css";
+import "../styles/Logout.css";
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
