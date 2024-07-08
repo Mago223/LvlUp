@@ -1,4 +1,4 @@
-.welcome body{
+#back{
     background-color: black;
   
 }
@@ -37,6 +37,7 @@
     font-weight: 600;
     margin-left: 340px;
     font-size: 20px;
+    color:white;
 }
 
 #signUp:hover{

@@ -1,4 +1,4 @@
-import "../styles/Welcome.css";
+import "../styles/welcome.css";
 import WelcomeNav from "../components/WelcomeNav";
 import welcomePic from "../welcome-page-pic.jpg";
 
