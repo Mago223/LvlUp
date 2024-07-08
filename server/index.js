@@ -11,15 +11,16 @@ const dotenv = require("dotenv").config(); // Load environment variables
 const cookieParser = require("cookie-parser");
 const db = require("./config/db.config"); // Database configuration
 const userRoutes = require("./routes/userRoutes"); // User-related routes
+const authRoutes = require("./routes/authRoutes"); //Auth-related routes
 const app = express();
 const cors = require("cors");
 
 // CORS Configuration
 const corsOptions = {
-	origin: process.env.CLIENT_URL || "http://localhost:5173", // Allow your frontend URL
-	credentials: true, // Allow cookies to be sent
-	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-	allowedHeaders: ["Content-Type", "Authorization"],
+  origin: process.env.CLIENT_URL || "http://localhost:5173", // Allow your frontend URL
+  credentials: true, // Allow cookies to be sent
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 // Middleware setup
@@ -32,21 +33,24 @@ app.use(cookieParser()); // Parse Cookie header and populate req.cookies
 // Warning: { force: true } will drop the table if it already exists
 // synchronizing the database and forcing it to false so we dont lose data
 db.sequelize.sync({ force: true }).then(() => {
-	console.log("db has been re sync");
+  console.log("db has been re sync");
 });
 
 // Routes for the user API
 app.use("/api/users", userRoutes);
 
+//Route for auth API
+app.use("/api/auth", authRoutes);
+
 // Root route (used to make sure db is connected - tester)
 app.get("/", (req, res) => {
-	res.json({ message: "Welcome to the application Fitness!" });
+  res.json({ message: "Welcome to the application Fitness!" });
 });
 
 const PORT = process.env.PORT || 3000; // server runs on port 3000 by default
 
 app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
 
 /**
