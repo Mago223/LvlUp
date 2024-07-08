@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
+
 * {
   font-family: "Exo 2", sans-serif;
   font-style: italic;
 }
 
-.login body {
-  background-color: #1c1b1b;
+#background {
+  background-image: url("../assets/login-background.jpg");
 }
 
 #logTitle {
@@ -50,6 +51,7 @@
   background-image: linear-gradient(to right, #d00000 20%, #ffba08 80%);
   font-size: 18px;
   font-weight: 600;
+  color: white;
 }
 
 #button:hover,
@@ -64,8 +66,8 @@
 }
 
 #pic {
-  height: 70.379vh;
-  width: 27vw;
+  height: 555px;
+  width: 410px;
 }
 
 .login input {

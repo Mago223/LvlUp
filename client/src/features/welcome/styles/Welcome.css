@@ -1,0 +1,53 @@
+#back{
+    background-color: black;
+  
+}
+
+#headline{
+    background-image: linear-gradient(
+    to right,
+    #d00000 30%,
+    #e85d04 50%,
+    #ffba08 70%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 100px;
+    padding-left: 110px;
+    font-size: 67px;
+    line-height: 1;
+    
+}
+
+
+#subtitle{
+    font-size: 29px;
+    color:#e85d04;
+    padding-top: 20px;
+    padding-left: 220px;
+}
+
+#headline, #subtitle {
+    text-align: center;
+}
+
+#signUp{
+    background-image: linear-gradient(to right, #d00000 20%, #ffba08 80%);
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 340px;
+    font-size: 20px;
+    color:white;
+}
+
+#signUp:hover{
+    filter: brightness(110%);
+}
+
+
+#welcomePic {
+    height: 697px;
+    width: 677px;
+    padding-bottom: 10px;
+  
+}
