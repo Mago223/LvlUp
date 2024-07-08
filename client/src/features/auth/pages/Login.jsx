@@ -22,8 +22,8 @@ function Login() {
 
   return (
     <div className="login">
-      {/* FROM MICHAEL: FIX THIS, cant have body within a div. never put body in a component, leave to index.html */}
-      <body className="flex justify-center items-center min-h-screen">
+     
+      <div id="background" className="flex justify-center items-center min-h-screen">
         <div
           className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl lg:rounded-r-none max-w-full"
           id="loginBody"
@@ -125,7 +125,7 @@ function Login() {
           />{" "}
           {/**Picture */}
         </div>
-      </body>
+      </div>
     </div>
   );
 }
