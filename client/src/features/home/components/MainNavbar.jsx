@@ -42,10 +42,6 @@ const navigation = [
   },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 function lightenColor(color, percent) {
   const num = parseInt(color.replace("#", ""), 16),
     amt = Math.round(2.55 * percent),
