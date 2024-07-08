@@ -1,4 +1,4 @@
-import "../styles/login.css";
+import "../styles/Login.css";
 import loginPic from "../assets/login-pic.png";
 import { login } from "../services/login";
 import { useState } from "react";
