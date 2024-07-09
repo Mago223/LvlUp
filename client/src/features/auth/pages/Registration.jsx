@@ -2,6 +2,9 @@ import "../styles/Registration.css";
 import { useState } from "react";
 import signUpPic from "../assets/dumbbells.jpg";
 import { signup } from "../services/signup";
+import { Navigate } from "react-router-dom";
+
+import authService from "../services/authService";
 
 export default function Registration() {
 	const [user, setUser] = useState({
@@ -28,8 +31,9 @@ export default function Registration() {
 	const handleSignup = async (e) => {
 		e.preventDefault();
 		if (handleConfirmPassowrd()) {
-			const response = await signup(user);
+			const response = await authService.signup(user);
 			console.log(response);
+			<Navigate to={"/home"} replace />;
 		} else {
 			console.log("password error");
 		}
