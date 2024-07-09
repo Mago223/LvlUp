@@ -13,15 +13,13 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-top: 100px;
-    padding-left: 110px;
-    font-size: 67px;
+    padding-left: 110px; 
     line-height: 1;
     
 }
 
 
 #subtitle{
-    font-size: 29px;
     color:#e85d04;
     padding-top: 20px;
     padding-left: 220px;
