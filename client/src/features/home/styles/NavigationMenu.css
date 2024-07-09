@@ -1,0 +1,22 @@
+.navigation-menu {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.logout, .delete-account {
+  padding: 10px 0;
+  color: #ff5722;
+  cursor: pointer;
+}

@@ -1,5 +1,9 @@
 import "../styles/Home.css";
 import MainNavbar from "../components/MainNavbar";
+import ProfileOverview from "../components/ProfileOverview";
+import Goals from "../components/Goals";
+import NavigationMenu from "../components/NavigationMenu";
+import UserBanner from "../components/UserBanner";
 
 export default function Home() {
   return (
@@ -7,7 +11,12 @@ export default function Home() {
       <header>
         <MainNavbar />
       </header>
-      <body></body>
+      <main>
+        <UserBanner />
+        <ProfileOverview />
+        <NavigationMenu />
+        <Goals />
+      </main>
     </div>
   );
 }

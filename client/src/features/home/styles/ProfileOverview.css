@@ -1,0 +1,30 @@
+.profile-overview {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calories {
+  background-color: #ff5722;
+  padding: 20px;
+  border-radius: 10px;
+  width:50%;
+}
+
+.chart {
+  height: 100px;
+  background-color: #ff5722;
+  margin-top: 10px;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}

@@ -1,0 +1,16 @@
+.todays-goals {
+  margin-top: 20px;
+}
+
+.goals-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.goals-images img {
+  width: calc(33% - 10px);
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
