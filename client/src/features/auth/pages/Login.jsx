@@ -1,9 +1,8 @@
 import "../styles/Login.css";
 import loginPic from "../assets/login-pic.png";
-import { login } from "../services/login";
 import { useState } from "react";
-import authService from "../services/authService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../../../utils/AuthContext";
 
 function Login() {
 	const [user, setUser] = useState({
@@ -11,6 +10,9 @@ function Login() {
 		password: "",
 	});
 	const navigate = useNavigate();
+	const location = useLocation();
+	const { login } = useAuth();
+
 	const handleUserInput = (e) => {
 		const { name, value } = e.target;
 		setUser((prev) => ({ ...prev, [name]: value }));
@@ -18,9 +20,10 @@ function Login() {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		const response = await authService.login(user);
+		const response = await login(user);
 		console.log(response);
-		navigate("/home", { replace: true });
+		const from = location.state?.from?.pathname || "/home";
+		navigate(from, { replace: true });
 	};
 
 	return (
