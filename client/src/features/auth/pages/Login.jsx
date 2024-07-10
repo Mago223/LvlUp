@@ -3,14 +3,14 @@ import loginPic from "../assets/login-pic.png";
 import { login } from "../services/login";
 import { useState } from "react";
 import authService from "../services/authService";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 	const [user, setUser] = useState({
 		email: "",
 		password: "",
 	});
-
+	const navigate = useNavigate();
 	const handleUserInput = (e) => {
 		const { name, value } = e.target;
 		setUser((prev) => ({ ...prev, [name]: value }));
@@ -20,7 +20,7 @@ function Login() {
 		e.preventDefault();
 		const response = await authService.login(user);
 		console.log(response);
-		<Navigate to={"/home"} replace />;
+		navigate("/home", { replace: true });
 	};
 
 	return (
