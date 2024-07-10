@@ -17,8 +17,8 @@ import {
 } from "@heroicons/react/24/outline";
 
 import "../styles/MainNavbar.css";
-import authService from "../../auth/services/authService";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../utils/AuthContext";
 
 const navigation = [
 	{
@@ -64,10 +64,11 @@ function lightenColor(color, percent) {
 }
 
 export default function MainNavbar() {
+	const { logout } = useAuth();
 	const navigate = useNavigate();
 	const handleLogout = async (e) => {
 		e.preventDefault();
-		const response = await authService.logout();
+		const response = await logout();
 		console.log(response);
 		navigate("/login", { replace: true });
 	};
