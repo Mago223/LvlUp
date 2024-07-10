@@ -74,17 +74,6 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 
-	const signup = async (user) => {
-		try {
-			const response = await api.post("/auth/signup", user);
-			setIsAuthenticated(true);
-			return response;
-		} catch (error) {
-			console.error("Login error:", error);
-			throw error;
-		}
-	};
-
 	const logout = async () => {
 		const response = await api.post("auth/logout");
 		setIsAuthenticated(false);
@@ -100,7 +89,7 @@ export const AuthProvider = ({ children }) => {
 	 * - setIsAuthenticated: Function to update the authentication state
 	 */
 	return (
-		<AuthContext.Provider value={{ isAuthenticated, loading, login, signup, logout }}>
+		<AuthContext.Provider value={{ isAuthenticated, loading, login, logout }}>
 			{children}
 		</AuthContext.Provider>
 	);
