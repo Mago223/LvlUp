@@ -1,9 +1,9 @@
 import { api } from "../../../services/axiosInstance";
 
 const authService = {
-	async login(user) {
+	login: async (user) => {
 		try {
-			const response = await api.post("/users/login", user);
+			const response = await api.post("/auth/login", user);
 			return response.data;
 		} catch (error) {
 			console.error("Login error:", error);
@@ -11,9 +11,9 @@ const authService = {
 		}
 	},
 
-	async signup(user) {
+	signup: async (user) => {
 		try {
-			const response = await api.post("/users/signup", user);
+			const response = await api.post("/auth/signup", user);
 			return response.data;
 		} catch (error) {
 			console.error("Login error:", error);
@@ -21,16 +21,21 @@ const authService = {
 		}
 	},
 
-	async check() {
+	checkAuth: async () => {
 		try {
-			await api.get("/api/auth/check", {
+			const response = await api.get("/auth/isAuthenticated", {
 				withCredentials: true,
 			});
-			return true;
+			return response.data.isAuthenticated;
 		} catch (error) {
 			console.error("Authentication check failed:", error);
 			return false;
 		}
+	},
+
+	logout: async () => {
+		const response = await api.post("auth/logout");
+		return response.data;
 	},
 };
 
