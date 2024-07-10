@@ -1,7 +1,10 @@
 import "../styles/Registration.css";
 import { useState } from "react";
 import signUpPic from "../assets/dumbbells.jpg";
-import { signup } from "../services/signup";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../utils/AuthContext";
+
+import authService from "../services/authService";
 
 export default function Registration() {
 	const [user, setUser] = useState({
@@ -10,6 +13,8 @@ export default function Registration() {
 		email: "",
 		password: "",
 	});
+	const navigate = useNavigate();
+	const { login } = useAuth();
 
 	const [confirmedPassword, setConfirmedPassword] = useState("");
 
@@ -28,10 +33,13 @@ export default function Registration() {
 	const handleSignup = async (e) => {
 		e.preventDefault();
 		if (handleConfirmPassowrd()) {
-			const response = await signup(user);
+			const response = await authService.signup(user);
 			console.log(response);
+			// After successful signup, log the user in
+			await login({ email: user.email, password: user.password });
+			navigate("/home", { replace: true });
 		} else {
-			console.log("password error");
+			console.error("Signup failed");
 		}
 	};
 
