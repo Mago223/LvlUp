@@ -63,6 +63,7 @@ export default {
 			"gradient-to-bl": "linear-gradient(to bottom left, var(--tw-gradient-stops))",
 			"gradient-to-l": "linear-gradient(to left, var(--tw-gradient-stops))",
 			"gradient-to-tl": "linear-gradient(to top left, var(--tw-gradient-stops))",
+			"gradient-main-theme-custom": "linear-gradient(to right, var(--tw-gradient-stops))",
 		},
 		backgroundOpacity: ({ theme }) => theme("opacity"),
 		backgroundPosition: {
@@ -173,6 +174,9 @@ export default {
 			rose: colors.rose,
 			"dark-grey": "#1F2025",
 			"input-grey": "#2E2E2E",
+			"main-theme-red": "#d00000",
+			"main-theme-orange": "#e85d04",
+			"main-theme-yellow": "#ffba08",
 		}),
 		columns: {
 			auto: "auto",
