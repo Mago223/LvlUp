@@ -12,6 +12,7 @@ const auth = require("../middleware/authMiddleware");
 const router = express.Router();
 
 router.post("/delete", auth.authenticateToken, userController.deleteUserAccount);
+
 router.get("/me", auth.authenticateToken, userController.getMe);
 
 module.exports = router;

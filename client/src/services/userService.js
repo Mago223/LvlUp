@@ -5,6 +5,12 @@ const userService = {
 		await api.post("/users/delete");
 		// to be implemented
 	},
+
+	/**
+	 * This method sends a GET request to the backend to get the current user.
+	 * @throws an error if the user cannot be found
+	 * @returns the user
+	 */
 	me: async () => {
 		try {
 			const response = await api.get("/users/me");

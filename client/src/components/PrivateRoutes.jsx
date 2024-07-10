@@ -17,7 +17,7 @@ const PrivateRoutes = () => {
 	const location = useLocation();
 
 	if (loading) {
-		return <div>Loading...</div>;
+		return <div>Loading...</div>; // TODO provide proper loading screen
 	}
 
 	// If authenticated, render the protected routes, otherwise redirect to login
