@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import axios from "axios";
 import authService from "../features/auth/services/authService";
-import userService from "../services/userService";
+import api from "../services/axiosInstance";
 
 /*
  * AuthContext: React Context for authentication state
@@ -63,6 +62,35 @@ export const AuthProvider = ({ children }) => {
 		validateToken();
 	}, []);
 
+	// login and logout functions and etc
+	const login = async (user) => {
+		try {
+			const response = await api.post("/auth/login", user);
+			setIsAuthenticated(true);
+			return response;
+		} catch (error) {
+			console.error("Login error:", error);
+			throw error;
+		}
+	};
+
+	const signup = async (user) => {
+		try {
+			const response = await api.post("/auth/signup", user);
+			setIsAuthenticated(true);
+			return response;
+		} catch (error) {
+			console.error("Login error:", error);
+			throw error;
+		}
+	};
+
+	const logout = async () => {
+		const response = await api.post("auth/logout");
+		setIsAuthenticated(false);
+		return response;
+	};
+
 	/**
 	 * Renders the AuthContext.Provider component
 	 *
@@ -72,7 +100,9 @@ export const AuthProvider = ({ children }) => {
 	 * - setIsAuthenticated: Function to update the authentication state
 	 */
 	return (
-		<AuthContext.Provider value={{ isAuthenticated, loading }}>{children}</AuthContext.Provider>
+		<AuthContext.Provider value={{ isAuthenticated, loading, login, signup, logout }}>
+			{children}
+		</AuthContext.Provider>
 	);
 };
 
