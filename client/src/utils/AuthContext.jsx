@@ -1,5 +1,7 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import axios from "axios";
+import authService from "../features/auth/services/authService";
+import userService from "../services/userService";
 
 /*
  * AuthContext: React Context for authentication state
@@ -16,7 +18,7 @@ import axios from "axios";
  */
 
 // create context
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 /**
  * AuthProvider: Component that wraps the app to provide authentication context
  *
@@ -24,59 +26,54 @@ export const AuthContext = createContext();
  * @param {React.ReactNode} props.children - Child components to be wrapped
  */
 export const AuthProvider = ({ children }) => {
-  /**
-   * State to track whether the user is authenticated
-   * @type {[boolean, function]} isAuthenticated, setIsAuthenticated
-   */
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+	/**
+	 * State to track whether the user is authenticated
+	 * @type {[boolean, function]} isAuthenticated, setIsAuthenticated
+	 */
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  /**
-   * Validates the user's authentication token
-   * Sends a request to the server to check if the current token is valid
-   * Updates the isAuthenticated state based on the response
-   *
-   * @async
-   * @function validateToken
-   */
+	const [loading, setLoading] = useState(true);
 
-  const validateToken = async () => {
-    try {
-      // Send GET request to check auth status
-      const response = await axios.get("/api/auth/check", {
-        withCredentials: true, // Ensures cookies are sent with the request
-      });
-      // If response is successful, set authenticated to true
-      if (response.status === 200) {
-        setIsAuthenticated(true);
-        // If response is not 200, set authenticated to false
-      } else {
-        setIsAuthenticated(false);
-      }
-    } catch (error) {
-      // If there's an error (e.g., network error, server error), set authenticated to false
-      setIsAuthenticated(false);
-    }
-  };
+	/**
+	 * Validates the user's authentication token
+	 * Sends a request to the server to check if the current token is valid
+	 * Updates the isAuthenticated state based on the response
+	 *
+	 * @async
+	 * @function validateToken
+	 */
 
-  /**
-   * Effect hook to validate token on component mount
-   * This ensures the authentication state is checked when the app loads
-   */
-  useEffect(() => {
-    validateToken();
-  }, []);
+	const validateToken = async () => {
+		try {
+			const isAuth = await authService.checkAuth();
+			setIsAuthenticated(isAuth);
+		} catch (error) {
+			// If there's an error (e.g., network error, server error), set authenticated to false
+			setIsAuthenticated(false);
+		} finally {
+			setLoading(false);
+		}
+	};
 
-  /**
-   * Renders the AuthContext.Provider component
-   *
-   * @returns {React.Element} AuthContext.Provider wrapping the children
-   * The Provider makes the following values available to its descendants:
-   * - isAuthenticated: Boolean indicating whether the user is authenticated
-   * - setIsAuthenticated: Function to update the authentication state
-   */
-  return (
-    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-      {children}
-    </AuthContext.Provider>
-  );
+	/**
+	 * Effect hook to validate token on component mount
+	 * This ensures the authentication state is checked when the app loads
+	 */
+	useEffect(() => {
+		validateToken();
+	}, []);
+
+	/**
+	 * Renders the AuthContext.Provider component
+	 *
+	 * @returns {React.Element} AuthContext.Provider wrapping the children
+	 * The Provider makes the following values available to its descendants:
+	 * - isAuthenticated: Boolean indicating whether the user is authenticated
+	 * - setIsAuthenticated: Function to update the authentication state
+	 */
+	return (
+		<AuthContext.Provider value={{ isAuthenticated, loading }}>{children}</AuthContext.Provider>
+	);
 };
+
+export const useAuth = () => useContext(AuthContext);
