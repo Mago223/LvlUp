@@ -12,17 +12,8 @@
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-top: 100px;
-    padding-left: 110px; 
     line-height: 1;
     
-}
-
-
-#subtitle{
-    color:#e85d04;
-    padding-top: 20px;
-    padding-left: 220px;
 }
 
 #headline, #subtitle {
@@ -31,9 +22,6 @@
 
 #signUp{
     background-image: linear-gradient(to right, #d00000 20%, #ffba08 80%);
-    font-size: 18px;
-    font-weight: 600;
-    margin-left: 340px;
     font-size: 20px;
     color:white;
 }
@@ -44,8 +32,8 @@
 
 
 #welcomePic {
-    height: 697px;
-    width: 677px;
-    padding-bottom: 10px;
+    height: 700px;
+    width: 700px;
+   
   
 }
