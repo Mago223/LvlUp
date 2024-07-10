@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { AuthContext } from "../utils/AuthContext";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { useAuth } from "../utils/AuthContext";
 
 /**
  * PrivateRoutes: A component to protect routes that require authentication
@@ -12,11 +12,20 @@ import { AuthContext } from "../utils/AuthContext";
  */
 
 const PrivateRoutes = () => {
-  // Use the AuthContext to get the current authentication status
-  const { isAuthenticated } = useContext(AuthContext);
+	// Use the AuthContext to get the current authentication status
+	const { isAuthenticated, loading } = useAuth();
+	const location = useLocation();
 
-  // If authenticated, render the protected routes, otherwise redirect to login
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	// If authenticated, render the protected routes, otherwise redirect to login
+	return isAuthenticated ? (
+		<Outlet />
+	) : (
+		<Navigate to="/login" state={{ from: location }} replace />
+	);
 };
 
 export default PrivateRoutes;
