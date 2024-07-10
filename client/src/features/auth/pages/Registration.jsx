@@ -1,8 +1,7 @@
 import "../styles/Registration.css";
 import { useState } from "react";
 import signUpPic from "../assets/dumbbells.jpg";
-import { signup } from "../services/signup";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import authService from "../services/authService";
 
@@ -13,6 +12,7 @@ export default function Registration() {
 		email: "",
 		password: "",
 	});
+	const navigate = useNavigate();
 
 	const [confirmedPassword, setConfirmedPassword] = useState("");
 
@@ -33,7 +33,7 @@ export default function Registration() {
 		if (handleConfirmPassowrd()) {
 			const response = await authService.signup(user);
 			console.log(response);
-			<Navigate to={"/home"} replace />;
+			navigate("/home", { replace: true });
 		} else {
 			console.log("password error");
 		}
