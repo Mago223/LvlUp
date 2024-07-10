@@ -4,24 +4,27 @@ import { Welcome } from "./features/welcome";
 import { Home } from "./features/home";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { AuthProvider } from "./utils/AuthContext";
-import TestRoute from "./features/testRoute/TestRoute";
+import { NotFound } from "./features/notFound";
 
 function App() {
 	return (
 		<div>
-			<Router>
-				<AuthProvider>
+			<AuthProvider>
+				<Router>
 					<Routes>
+						{/* Public routes */}
 						<Route path="/register" element={<Registration />} />
 						<Route path="/login" element={<Login />} />
 						<Route path="/" element={<Welcome />} /> {/**welcome page */}
+						{/* Protected routes */}
 						<Route element={<PrivateRoutes />}>
 							<Route path="/home" element={<Home />} />
-							<Route path="/test" element={<TestRoute />} />
 						</Route>
+						{/* Catch-all route for undefined paths */}
+						<Route path="*" element={<NotFound />} />
 					</Routes>
-				</AuthProvider>
-			</Router>
+				</Router>
+			</AuthProvider>
 		</div>
 	);
 }
