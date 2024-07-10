@@ -1,0 +1,22 @@
+.DialogBackdrop {
+    background-color: rgba(75, 85, 99, 0.75); 
+}
+
+.DialogPanel {
+    background-color: #1F2025; 
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.ButtonClose {
+    background-color: #FAA307; 
+    color: white;
+    border-radius: 0.375rem; 
+    padding: 0.5rem 1rem; 
+    font-size: 1rem; 
+    font-weight: 500; 
+}
+
+.ButtonClose:hover {
+    background-color: #e89600; 
+}
