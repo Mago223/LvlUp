@@ -53,6 +53,14 @@ const setJwtCookie = (res, token) => {
 	});
 };
 
+const clearCookie = (res) => {
+	res.clearCookie("jwt", {
+		httpOnly: true,
+		secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+		sameSite: "strict", // Protect against CSRF
+	});
+};
+
 /**
  * Hashes a password
  * @param {string} password - The password to hash
@@ -80,4 +88,5 @@ module.exports = {
 	setJwtCookie,
 	hashPassword,
 	comparePasswords,
+	clearCookie,
 };
