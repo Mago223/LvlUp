@@ -8,8 +8,16 @@ export const signup = async (userObject) => {
 			const response = await axios.post(`${DB_HOST}${signupEndPoint}`, userObject);
 			return response;
 		} catch (error) {
-			console.error("Login error:", error.response?.data || error.message);
-			throw error;
+			if (error.response) {
+                console.error("Signup error response:", error.response.data);
+                throw error.response.data; 
+            } else if (error.request) {
+                console.error("Signup error request:", error.request);
+                throw new Error("No response from server");
+            } else {
+                console.error("Signup error message:", error.message);
+                throw new Error(error.message);
+            }
 		}
 	} else {
 		throw new Error("Invalid user object provided");

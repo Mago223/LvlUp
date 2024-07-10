@@ -2,6 +2,7 @@ import "../styles/Registration.css";
 import { useState } from "react";
 import signUpPic from "../assets/dumbbells.jpg";
 import { signup } from "../services/signup";
+import ErrorPopup from "./ErrorPopup";
 
 export default function Registration() {
 	const [user, setUser] = useState({
@@ -12,6 +13,8 @@ export default function Registration() {
 	});
 
 	const [confirmedPassword, setConfirmedPassword] = useState("");
+	const [error, setError] = useState(null);
+    const [openErrorPopup, setOpenErrorPopup] = useState(false);
 
 	const handleUserInput = (e) => {
 		const { name, value } = e.target;
@@ -28,10 +31,18 @@ export default function Registration() {
 	const handleSignup = async (e) => {
 		e.preventDefault();
 		if (handleConfirmPassowrd()) {
-			const response = await signup(user);
-			console.log(response);
+			try {
+				const response = await signup(user);
+				console.log(response);
+			} catch (error) {
+				console.error("Signup error:", error.response?.data.error || error.message);
+				setError(error.response?.data.error || "An error occurred while signing up. Please try again.");
+				setOpenErrorPopup(true);
+			}
 		} else {
 			console.log("password error");
+			setError("Passwords do not match");
+			setOpenErrorPopup(true);
 		}
 	};
 
@@ -158,6 +169,7 @@ export default function Registration() {
 					src={signUpPic}
 				></img>
 			</div>
+			<ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />
 		</div>
 	);
 }
