@@ -11,6 +11,7 @@ const dotenv = require("dotenv").config(); // Load environment variables
 const cookieParser = require("cookie-parser");
 const db = require("./config/db.config"); // Database configuration
 const userRoutes = require("./routes/userRoutes"); // User-related routes
+const authRoutes = require("./routes/authRoutes"); //Auth-related routes
 const app = express();
 const cors = require("cors");
 
@@ -31,12 +32,15 @@ app.use(cookieParser()); // Parse Cookie header and populate req.cookies
 // Database synchronization
 // Warning: { force: true } will drop the table if it already exists
 // synchronizing the database and forcing it to false so we dont lose data
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
 	console.log("db has been re sync");
 });
 
 // Routes for the user API
 app.use("/api/users", userRoutes);
+
+//Route for auth API
+app.use("/api/auth", authRoutes);
 
 // Root route (used to make sure db is connected - tester)
 app.get("/", (req, res) => {
