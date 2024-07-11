@@ -6,9 +6,9 @@
 #headline{
     background-image: linear-gradient(
     to right,
-    #d00000 30%,
-    #e85d04 50%,
-    #ffba08 70%
+    #d00000 25%,
+    #e85d04 60%,
+    #ffba08 86%
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -21,7 +21,7 @@
 }
 
 #signUp{
-    background-image: linear-gradient(to right, #d00000 20%, #ffba08 80%);
+    background-image: linear-gradient(to right, #d00000 10%, #ffba08 90%);
     font-size: 20px;
     color:white;
 }
@@ -34,6 +34,4 @@
 #welcomePic {
     height: 700px;
     width: 700px;
-   
-  
 }
