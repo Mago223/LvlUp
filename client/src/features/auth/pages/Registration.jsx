@@ -2,7 +2,7 @@ import "../styles/Registration.css";
 import { useState } from "react";
 import signUpPic from "../assets/dumbbells.jpg";
 import { signup } from "../services/signup";
-import ErrorPopup from "./ErrorPopup";
+import ErrorPopup from "../components/ErrorPopUp";
 
 export default function Registration() {
 	const [user, setUser] = useState({

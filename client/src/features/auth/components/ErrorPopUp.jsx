@@ -1,4 +1,4 @@
-import "../styles/ErrorPopup.css";
+import "../styles/ErrorPopUp.css";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import PropTypes from 'prop-types';
