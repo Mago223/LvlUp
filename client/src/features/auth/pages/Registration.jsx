@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../utils/AuthContext";
 
 import authService from "../services/authService";
-import ErrorPopup from "./ErrorPopup";
+import ErrorPopup from "../components/ErrorPopUp";
 
 export default function Registration() {
 	const [user, setUser] = useState({
