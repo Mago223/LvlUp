@@ -10,7 +10,7 @@ export const signup = async (userObject) => {
 		} catch (error) {
 			if (error.response) {
                 console.error("Signup error response:", error.response.data);
-                throw error.response.data; 
+                throw new Error(error.response.data.error);
             } else if (error.request) {
                 console.error("Signup error request:", error.request);
                 throw new Error("No response from server");

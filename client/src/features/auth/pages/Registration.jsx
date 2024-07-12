@@ -35,8 +35,8 @@ export default function Registration() {
 				const response = await signup(user);
 				console.log(response);
 			} catch (error) {
-				console.error("Signup error:", error.response?.data.error || error.message);
-				setError(error.response?.data.error || "An error occurred while signing up. Please try again.");
+				console.error("Signup error:", error.message);
+				setError(error.message || "An error occurred while signing up. Please try again.");
 				setOpenErrorPopup(true);
 			}
 		} else {
@@ -169,7 +169,7 @@ export default function Registration() {
 					src={signUpPic}
 				></img>
 			</div>
-			<ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />
+			{error && <ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />}
 		</div>
 	);
 }
