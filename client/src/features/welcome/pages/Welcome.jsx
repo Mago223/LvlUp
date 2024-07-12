@@ -2,6 +2,7 @@ import "../styles/welcome.css";
 import WelcomeNav from "../components/WelcomeNav";
 import welcomePic from "../assets/welcome-page-pic.jpg";
 import { BoltIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
 
 function Welcome() {
 	return (
