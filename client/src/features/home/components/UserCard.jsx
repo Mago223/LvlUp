@@ -32,9 +32,20 @@ export default function UserCard({ userData }) {
       </div>
 
       {/* level and progress bar*/}
-      <div>
-        <p>Lvl. {level}</p>
-        <div className="w-full h-3 bg-input-grey rounded-full"></div>
+      <div className="mb-4">
+        <div className="flex justify-between mb-1">
+          <span>Lvl. {level}</span>
+        </div>
+        <div className="w-full bg-input-grey rounded-full h-2.5">
+          <div
+            className="h-2.5 rounded-full"
+            style={{
+              width: `${progressBar}%`,
+              background:
+                "linear-gradient(90deg, #d00000 0%, #e85d04 50%, #ffba08 100%)",
+            }}
+          ></div>
+        </div>
       </div>
     </div>
   );
