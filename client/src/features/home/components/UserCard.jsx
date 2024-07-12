@@ -25,7 +25,7 @@ export default function UserCard({ userData }) {
   }, [bio]);
 
   return (
-    <div className="relative flex flex-col items-center mt-10 ml-6 p-5 bg-dark-grey shadow-md bg-clip-border rounded-xl w-56">
+    <div className="relative flex flex-col items-center mt-10  p-5 bg-dark-grey shadow-md bg-clip-border rounded-xl w-56">
       {/* leaderboard number */}
       <div classsName="text-center">
         <p className="text-white text-xl ">#{leaderboardNum}</p>
