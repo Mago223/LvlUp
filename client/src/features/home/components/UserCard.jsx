@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export default function UserCard({ userData }) {
   const [bioFontSize, setBioFontSize] = useState("text-sm");
 
+  {/* Function that changes font size depending on the text length for the user bio */}
   const calculateFontSize = (text) => {
     if (text.length < 50) return "text-lg";
     if (text.length < 100) return "text-base";
@@ -10,6 +11,7 @@ export default function UserCard({ userData }) {
     return "text-xs";
   };
 
+  {/* Data given to user card by API*/}
   const {
     username,
     fullName,
@@ -20,6 +22,7 @@ export default function UserCard({ userData }) {
     bio,
   } = userData;
 
+  {/* dynamically changes bio fontsize on mount */}
   useEffect(() => {
     setBioFontSize(calculateFontSize(bio));
   }, [bio]);
@@ -58,7 +61,7 @@ export default function UserCard({ userData }) {
             Lvl. {level}
           </span>
         </div>
-        {/* progress bar */}
+        {/* progress bar -- Dynamically uses progresBar variable for the progress bar width*/}
         <div className="w-full bg-input-grey rounded-full h-2.5">
           <div
             className="h-2.5 rounded-full"
@@ -71,7 +74,7 @@ export default function UserCard({ userData }) {
         </div>
       </div>
 
-      {/* Bio bubble */}
+      {/* Bio bubble -- Uses CalculateFontSize() for dynamic font sizing*/}
       <div className="h-auto w-full bg-input-grey flex items-center justify-center rounded-lg">
         <div
           className={`p-2 text-center text-main-theme-yellow font-semibold italic ${bioFontSize}`}
