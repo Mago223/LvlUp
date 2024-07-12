@@ -3,6 +3,7 @@ import loginPic from "../assets/login-pic.png";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../../utils/AuthContext";
+import ErrorPopup from "../components/ErrorPopUp";
 
 function Login() {
 	const [user, setUser] = useState({
@@ -12,6 +13,8 @@ function Login() {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const { login } = useAuth();
+	const [error, setError] = useState(null);
+    const [openErrorPopup, setOpenErrorPopup] = useState(false);
 
 	const handleUserInput = (e) => {
 		const { name, value } = e.target;
@@ -20,10 +23,18 @@ function Login() {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		const response = await login(user);
-		console.log(response);
-		const from = location.state?.from?.pathname || "/home";
-		navigate(from, { replace: true });
+		try{
+			const response = await login(user);
+			console.log(response);
+			const from = location.state?.from?.pathname || "/home";
+			navigate(from, { replace: true });
+		}catch (error) {
+			console.error("Login error:", error.message);
+			setError(error.message || "An error occurred while logging up. Please try again.");
+			setOpenErrorPopup(true);
+		}
+		
+		
 	};
 
 	return (
@@ -121,6 +132,7 @@ function Login() {
 					{/**Picture */}
 				</div>
 			</div>
+			{error && <ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />}
 		</div>
 	);
 }

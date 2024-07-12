@@ -1,0 +1,13 @@
+.DialogBackdrop {
+    background-color: rgba(75, 85, 99, 0.75); /* Tailwind's bg-gray-500 at 75% opacity */
+}
+
+.DialogPanel {
+    background-color: #1F2025; /* Custom dark background */
+    color: white;
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+.ButtonClose:hover {
+    background-color: #e89600; /* Darker orange for hover state */
+}

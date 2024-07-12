@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../utils/AuthContext";
 
 import authService from "../services/authService";
+import ErrorPopup from "../components/ErrorPopUp";
 
 export default function Registration() {
 	const [user, setUser] = useState({
@@ -17,6 +18,8 @@ export default function Registration() {
 	const { login } = useAuth();
 
 	const [confirmedPassword, setConfirmedPassword] = useState("");
+	const [error, setError] = useState(null);
+    const [openErrorPopup, setOpenErrorPopup] = useState(false);
 
 	const handleUserInput = (e) => {
 		const { name, value } = e.target;
@@ -33,13 +36,22 @@ export default function Registration() {
 	const handleSignup = async (e) => {
 		e.preventDefault();
 		if (handleConfirmPassowrd()) {
-			const response = await authService.signup(user);
-			console.log(response);
-			// After successful signup, log the user in
-			await login({ email: user.email, password: user.password });
-			navigate("/home", { replace: true });
+			try {
+				const response = await authService.signup(user);
+				console.log(response);
+				// After successful signup, log the user in
+				await login({ email: user.email, password: user.password });
+				navigate("/home", { replace: true });
+			} catch (error) {
+				console.error("Signup error:", error.message);
+				setError(error.message || "An error occurred while signing up. Please try again.");
+				setOpenErrorPopup(true);
+			}
+
 		} else {
 			console.error("Signup failed");
+			setError("Passwords do not match");
+			setOpenErrorPopup(true);
 		}
 	};
 
@@ -166,6 +178,7 @@ export default function Registration() {
 					src={signUpPic}
 				></img>
 			</div>
+			{error && <ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />}
 		</div>
 	);
 }
