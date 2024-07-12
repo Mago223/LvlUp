@@ -34,7 +34,7 @@ export default function UserCard({ userData }) {
       {/* level and progress bar*/}
       <div>
         <p>Lvl. {level}</p>
-        <div className="w-full h-3  bg-input-grey rounded-full"></div>
+        <div className="w-full h-3 bg-input-grey rounded-full"></div>
       </div>
     </div>
   );
