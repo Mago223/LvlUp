@@ -26,14 +26,15 @@ function Login() {
 		try{
 			const response = await login(user);
 			console.log(response);
+			const from = location.state?.from?.pathname || "/home";
+			navigate(from, { replace: true });
 		}catch (error) {
 			console.error("Login error:", error.message);
 			setError(error.message || "An error occurred while logging up. Please try again.");
 			setOpenErrorPopup(true);
 		}
 		
-		const from = location.state?.from?.pathname || "/home";
-		navigate(from, { replace: true });
+		
 	};
 
 	return (
@@ -131,9 +132,7 @@ function Login() {
 					{/**Picture */}
 				</div>
 			</div>
-	  {error && (
-				<ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />
-			)}
+			{error && <ErrorPopup open={openErrorPopup} setOpen={setOpenErrorPopup} message={error} />}
 		</div>
 	);
 }

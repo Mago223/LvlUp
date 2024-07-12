@@ -39,14 +39,15 @@ export default function Registration() {
 			try {
 				const response = await authService.signup(user);
 				console.log(response);
+				// After successful signup, log the user in
+				await login({ email: user.email, password: user.password });
+				navigate("/home", { replace: true });
 			} catch (error) {
 				console.error("Signup error:", error.message);
 				setError(error.message || "An error occurred while signing up. Please try again.");
 				setOpenErrorPopup(true);
 			}
-			// After successful signup, log the user in
-			await login({ email: user.email, password: user.password });
-			navigate("/home", { replace: true });
+
 		} else {
 			console.error("Signup failed");
 			setError("Passwords do not match");
