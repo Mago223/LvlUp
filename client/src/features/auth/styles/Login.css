@@ -6,18 +6,19 @@
   font-style: italic;
 }
 
-#background {
-  background-image: url("../assets/login-background.jpg");
+
+#background{
+  background-color: #1F2025;
 }
 
 #logTitle {
-  font-size: 65px;
+  font-size: 70px;
   font-weight: bold;
   background-image: linear-gradient(
     to right,
     #d00000 30%,
-    #e85d04 50%,
-    #ffba08 70%
+    #e85d04 52%,
+    #ffba08 63%
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -66,8 +67,8 @@
 }
 
 #pic {
-  height: 555px;
-  width: 410px;
+  height: 755px;
+  width: 610px;
 }
 
 .login input {
