@@ -12,17 +12,19 @@ function Welcome() {
 				<div className="max-w-[1250px] mx-auto lg:grid lg:grid-cols-2 lg:gap-x-8">
 					<div className="flex flex-col px-4 lg:pl-[130px] lg:pr-0" id="textCont">
 						<h1
-							className="font-bold text-[36px] sm:text-[48px] lg:text-[52px] pt-[20px] lg:pt-[135px]"
+							className="font-bold text-[2.2rem] lg:text-[52px] pt-[20px] lg:pt-[135px]"
 							id="headline"
 						>
 							Take Your Fitness To The Next Level!
 						</h1>
-						<img
-							id="welcomePic"
-							src={welcomePic}
-							className="w-[70%] mx-auto mt-5 object-cover lg:hidden"
-							alt="Welcome"
-						/>
+						<div className="mt-5 ">
+							<img
+								src={welcomePic}
+								className="w-[80%] md:w-[50%] mx-auto  object-cover lg:hidden"
+								alt="Welcome"
+							/>
+						</div>
+
 						<p
 							id="subtitle"
 							className="font-bold text-[16px] sm:text-[19px] lg:text-[23px] pt-[15px] sm:pt-[25px] text-[#FAA307]"
