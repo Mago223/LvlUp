@@ -39,13 +39,14 @@ function Login() {
 
 	return (
 		<div className="login">
-			<div id="background" className="flex justify-center items-center min-h-screen">
+			<div id="background" className="flex justify-center items-center max-h-fit min-h-screen gap-0 lg:gap-[80px]">
 				<div
-					className="bg-[#1F2025] text-[#181028] p-8 space-y-6 shadow-2xl rounded-xl lg:rounded-r-none max-w-full"
+					className="bg-[#1F2025] text-[#181028] p-5 lg:p-[105px] ml-0 lg:ml-[50px] space-y-2 shadow-2xl rounded-xl lg:rounded-lg w-10/12 md:w-6/12"
 					id="loginBody"
 				>
-					<h1 id="logTitle"> LvlUp </h1> {/* logo */}
-					<p>Welcome back! Please enter your login credentials.</p> {/* Instructions */}
+					<h1 id="logTitle" className="pb-[8px]"> LvlUp </h1> {/* logo */}
+					<p className="text-[18px]">Welcome back!</p> {/* Instructions */}
+					<p className="text-[18px]"> Please enter your login credentials.</p>
 					<form className="space-y-6" action="#" method="POST" onSubmit={handleLogin}>
 						<div>
 							<label
@@ -126,7 +127,7 @@ function Login() {
 				<div>
 					<img
 						id="pic"
-						className="rounded-xl rounded-l-none shadow-2xl max-w-full hidden lg:block"
+						className=" shadow-2xl max-w-full hidden xl:block"
 						src={loginPic}
 					/>{" "}
 					{/**Picture */}
