@@ -1,37 +1,30 @@
-#back{
-    background-color: black;
-  
+#back {
+	background-color: black;
 }
 
-#headline{
-    background-image: linear-gradient(
-    to right,
-    #d00000 25%,
-    #e85d04 60%,
-    #ffba08 86%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-    
+#headline {
+	background-image: linear-gradient(to right, #d00000 25%, #e85d04 60%, #ffba08 86%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	line-height: 1;
 }
 
-#headline, #subtitle {
-    text-align: center;
+#headline,
+#subtitle {
+	text-align: center;
 }
 
-#signUp{
-    background-image: linear-gradient(to right, #d00000 10%, #ffba08 90%);
-    font-size: 20px;
-    color:white;
+#signUp {
+	background-image: linear-gradient(to right, #d00000 10%, #ffba08 90%);
+	font-size: 20px;
+	color: white;
 }
 
-#signUp:hover{
-    filter: brightness(110%);
+#signUp:hover {
+	filter: brightness(110%);
 }
 
-
-#welcomePic {
+/* #welcomePic {
     height: 700px;
     width: 700px;
-}
+} */
