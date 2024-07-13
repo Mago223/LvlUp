@@ -28,9 +28,9 @@ function Login() {
 
 	return (
 		<div className="login">
-			<div id="background" className="flex justify-center items-center max-h-fit min-h-screen">
+			<div id="background" className="flex justify-center items-center max-h-fit min-h-screen gap-0 lg:gap-[80px]">
 				<div
-					className="bg-[#1F2025] text-[#181028] p-8 md:p-[100px] space-y-2 shadow-2xl rounded-xl lg:rounded-lg w-full lg:w-6/12"
+					className="bg-[#1F2025] text-[#181028] p-5 lg:p-[105px] ml-0 lg:ml-[50px] space-y-2 shadow-2xl rounded-xl lg:rounded-lg w-10/12 md:w-6/12"
 					id="loginBody"
 				>
 					<h1 id="logTitle" className="pb-[8px]"> LvlUp </h1> {/* logo */}
@@ -116,7 +116,7 @@ function Login() {
 				<div>
 					<img
 						id="pic"
-						className=" shadow-2xl max-w-full hidden lg:block"
+						className=" shadow-2xl max-w-full hidden xl:block"
 						src={loginPic}
 					/>{" "}
 					{/**Picture */}
